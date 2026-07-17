@@ -1,0 +1,54 @@
+{
+  "current_version": "2.3.7",
+  "app_name": "Nova Ultimate Suite",
+  "history": [
+    {
+      "version": "2.3.0",
+      "timestamp": "2026-07-01T12:00:00Z",
+      "type": "minor",
+      "description": "Initial UI and AI Enhancement Suite"
+    },
+    {
+      "version": "2.3.1",
+      "timestamp": "2026-07-05T14:30:00Z",
+      "type": "patch",
+      "description": "Added GPU diagnostics and fallback mechanisms"
+    },
+    {
+      "version": "2.3.2",
+      "timestamp": "2026-07-10T10:15:00Z",
+      "type": "patch",
+      "description": "Integrated FFmpeg services and downsampling"
+    },
+    {
+      "version": "2.3.3",
+      "timestamp": "2026-07-14T11:15:00Z",
+      "type": "patch",
+      "description": "Refactored build system and isolated temp workspaces"
+    },
+    {
+      "version": "2.3.4",
+      "timestamp": "2026-07-14T12:30:45Z",
+      "type": "patch",
+      "description": "Bumping patch to 2.3.4 for testing"
+    },
+    {
+      "version": "2.3.5",
+      "timestamp": "2026-07-16T11:39:47Z",
+      "type": "patch",
+      "description": "Release packaging (PyInstaller_Lean)"
+    },
+    {
+      "version": "2.3.6",
+      "timestamp": "2026-07-16T13:01:38Z",
+      "type": "patch",
+      "description": "Release packaging (PyInstaller_Lean)"
+    },
+    {
+      "version": "2.3.7",
+      "timestamp": "2026-07-17T15:14:13Z",
+      "type": "patch",
+      "description": "Fix BGM preservation on mono/dual-mono dubbed videos; update audio ducking levels"
+    }
+  ]
+}

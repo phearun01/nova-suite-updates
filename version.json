@@ -1,4 +1,7 @@
 {
+  "version": "2.3.7",
+  "url": "https://github.com/phearun01/nova-suite-updates/releases/latest",
+  "notes": "v2.3.7 - Fix: Background music preserved on mono/dual-mono dubbed videos. Improved audio ducking levels.",
   "current_version": "2.3.7",
   "app_name": "Nova Ultimate Suite",
   "history": [

@@ -268,19 +268,45 @@ class UpdateProgressDialog(QDialog):
             QTimer.singleShot(3000, self.reject)
 
     def _restart_app(self):
-        """Relaunch Nova_Ultimate_Suite.exe and quit current instance."""
+        """
+        Rename Nova_Ultimate_Suite.exe → Nova_Ultimate_Suite_v{new_version}.exe
+        then relaunch the renamed EXE. Windows allows renaming a running EXE.
+        """
         if getattr(sys, "frozen", False):
-            exe = Path(sys.executable)
-        else:
-            exe = Path(__file__).resolve().parent.parent / "desktop_app.py"
+            current_exe = Path(sys.executable)
+            app_dir     = current_exe.parent
+            new_name    = f"Nova_Ultimate_Suite_v{self.new_version}.exe"
+            new_exe     = app_dir / new_name
 
-        try:
-            if getattr(sys, "frozen", False):
-                subprocess.Popen([str(exe)])
-            else:
+            try:
+                # Remove any old versioned EXEs (except the one currently running)
+                for old in app_dir.glob("Nova_Ultimate_Suite_v*.exe"):
+                    if old != current_exe:
+                        try:
+                            old.unlink()
+                        except Exception:
+                            pass
+
+                # Rename current EXE to versioned name
+                if current_exe.name != new_name:
+                    current_exe.rename(new_exe)
+
+                launch_exe = new_exe
+            except Exception:
+                launch_exe = current_exe  # fallback: launch with original name
+
+            try:
+                subprocess.Popen([str(launch_exe)])
+            except Exception:
+                pass
+
+        else:
+            # Dev mode — just restart desktop_app.py
+            exe = Path(__file__).resolve().parent.parent / "desktop_app.py"
+            try:
                 subprocess.Popen([sys.executable, str(exe)])
-        except Exception:
-            pass
+            except Exception:
+                pass
 
         self.accept()
         QTimer.singleShot(300, QApplication.quit)

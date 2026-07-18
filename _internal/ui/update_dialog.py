@@ -305,9 +305,12 @@ class UpdateDialog(QDialog):
         self.reject()
 
     def _on_update_now(self):
-        """Launch updater.exe and close the main app."""
+        """Launch updater.exe with the correct GitHub server URL."""
         self.btn_update.setEnabled(False)
         self.btn_update.setText("⏳  Launching updater...")
+
+        # GitHub raw URL (without /version.json) — updater detects GitHub mode from this
+        GITHUB_SERVER_URL = "https://raw.githubusercontent.com/phearun01/nova-suite-updates/main"
 
         if getattr(sys, "frozen", False):
             exe_dir      = Path(sys.executable).parent
@@ -318,10 +321,12 @@ class UpdateDialog(QDialog):
             updater_path = app_dir / "scripts" / "build" / "updater.py"
 
         if updater_path.exists():
-            if getattr(sys, "frozen", False):
-                subprocess.Popen([str(updater_path), "--app-dir", str(app_dir)])
-            else:
-                subprocess.Popen([sys.executable, str(updater_path), "--app-dir", str(app_dir)])
+            cmd = (
+                [str(updater_path), "--app-dir", str(app_dir), "--url", GITHUB_SERVER_URL]
+                if getattr(sys, "frozen", False)
+                else [sys.executable, str(updater_path), "--app-dir", str(app_dir), "--url", GITHUB_SERVER_URL]
+            )
+            subprocess.Popen(cmd)
             self.accept()
             QTimer.singleShot(500, QApplication.quit)
         else:
@@ -332,6 +337,7 @@ class UpdateDialog(QDialog):
             )
             self.btn_update.setEnabled(True)
             self.btn_update.setText("▶  UPDATE NOW")
+
 
     # ── Allow dragging the frameless dialog ──────────────────────────────────
     def mousePressEvent(self, event):

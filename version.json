@@ -1,6 +1,6 @@
 {
   "version": "2.3.8",
-  "url": "https://github.com/phearun01/nova-suite-updates/releases/download/v2.3.8/Nova_Ultimate_Suite_v2.3.8_PyInstaller_Full.zip",
+  "url": "https://github.com/phearun01/nova-suite-updates/releases/download/v2.3.8/Nova_Ultimate_Suite_v2.3.8_patch.zip",
   "notes": "v2.3.8 - Fix: Background music preserved on mono/dual-mono dubbed videos. Improved audio ducking levels.",
   "current_version": "2.3.8",
   "app_name": "Nova Ultimate Suite",

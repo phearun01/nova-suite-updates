@@ -1,8 +1,8 @@
 {
-  "version": "2.3.8",
-  "url": "https://github.com/phearun01/nova-suite-updates/releases/download/v2.3.8/Nova_Ultimate_Suite_v2.3.8_patch.zip",
-  "notes": "v2.3.8 - Fix: Background music preserved on mono/dual-mono dubbed videos. Improved audio ducking levels.",
-  "current_version": "2.3.8",
+  "version": "2.4.1",
+  "current_version": "2.4.1",
+  "url": "https://github.com/phearun01/nova-suite-updates/releases/download/v2.4.1/Nova_Ultimate_Suite_v2.4.1_Update.zip",
+  "notes": "• Custom Episodes per Recap Video (Batch Mode)\n• Automatic PROHIBITED_CONTENT Graceful Fallback\n• Parallel Multi-threaded Recap Video Rendering\n• Batch Task Table Integration with Live Log Streaming\n• Permanent Episode Removal & Dub Cache Management",
   "app_name": "Nova Ultimate Suite",
   "history": [
     {
@@ -49,15 +49,21 @@
     },
     {
       "version": "2.3.7",
-      "timestamp": "2026-07-17T15:14:13Z",
+      "timestamp": "2026-07-21T16:52:12Z",
       "type": "patch",
-      "description": "Fix BGM preservation on mono/dual-mono dubbed videos; update audio ducking levels"
+      "description": "Feature updates for Recap video"
     },
     {
-      "version": "2.3.8",
-      "timestamp": "2026-07-17T15:42:20Z",
+      "version": "2.4.0",
+      "timestamp": "2026-07-22T01:03:10Z",
+      "type": "minor",
+      "description": "AI Movie Recap Suite & Dynamic Scene Autopadding"
+    },
+    {
+      "version": "2.4.1",
+      "timestamp": "2026-07-22T04:28:21Z",
       "type": "patch",
-      "description": "Release packaging (PyInstaller_Full)"
+      "description": "AI Movie Recap Suite Batch Mode, Custom Episode Count, Parallel Rendering & Live Log Table"
     }
   ]
 }

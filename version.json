@@ -1,8 +1,8 @@
 {
-  "version": "2.4.1",
-  "current_version": "2.4.1",
+  "version": "2.4.2",
+  "current_version": "2.4.2",
   "url": "https://github.com/phearun01/nova-suite-updates/releases/download/v2.4.1/Nova_Ultimate_Suite_v2.4.1_Patch.zip",
-  "notes": "• Custom Episodes per Recap Video (Batch Mode)\n• Automatic PROHIBITED_CONTENT Graceful Fallback\n• Parallel Multi-threaded Recap Video Rendering\n• Batch Task Table Integration with Live Log Streaming\n• Permanent Episode Removal & Dub Cache Management",
+  "notes": "• Test Patch Update v2.4.2\n• Custom Episodes per Recap Video (Batch Mode)\n• Automatic PROHIBITED_CONTENT Graceful Fallback\n• Parallel Multi-threaded Recap Video Rendering\n• Batch Task Table Integration with Live Log Streaming\n• Permanent Episode Removal & Dub Cache Management",
   "app_name": "Nova Ultimate Suite",
   "history": [
     {
